@@ -343,8 +343,6 @@ runs:
 
         show_hr
 
-        touch .deploy-running
-
         if [ "${input_sync}" == "full" ]; then
             mirror --exclude-glob=${{inputs.exclude-glob}} --max-errors=10 --reverse ${{inputs.ftp-mirror-options}} ${{inputs.local-path}} ${remote_path_unslash}
             ${{inputs.ftp-post-sync-commands}}"
